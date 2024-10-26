@@ -1,0 +1,220 @@
+/* Global styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height for centering */
+    margin: 0;
+    background-color: #f0f0f0; /* Optional background color */
+}
+
+/* Tic Tac Toe container */
+.tictac-container {
+    text-align: center;
+    max-width: 350px; /* Maximum width for the game */
+    margin: auto;
+}
+
+.tictac-button {
+    padding: 20px 0px 0px 0px;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    font-size: 250%;
+    cursor: pointer;
+    margin: 0px -4px 0px 0px;
+}
+#tictac-game {
+    display: none;
+    margin: auto;
+    width: 300px;
+}
+#tictac-back {
+    height: 400px;
+    font-family: "Comfortaa", cursive;
+}
+#game-state {
+    position: absolute;
+    font-size: 800%;
+    opacity: 0.6;
+    text-shadow:
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000;
+}
+#ttt00 {
+    border-bottom: solid 2px #000;
+    border-right: solid 2px #000;
+    cursor: default;
+}
+
+#ttt01 {
+    border-bottom: solid 2px #000;
+}
+
+#ttt02 {
+    border-bottom: solid 2px #000;
+    border-left: solid 2px #000;
+}
+
+#ttt10 {
+    border-right: solid 2px #000;
+}
+
+#ttt12 {
+    border-left: solid 2px #000;
+}
+
+#ttt20 {
+    border-top: solid 2px #000;
+    border-right: solid 2px #000;
+}
+
+#ttt21 {
+    border-top: solid 2px #000;
+}
+
+#ttt22 {
+    border-top: solid 2px #000;
+    border-left: solid 2px #000;
+}
+#ttt-title {
+    padding: 20px 0px 0px 0px;
+    cursor: default;
+}
+#ttt-author {
+    margin-top: -20px;
+    padding: 0px 0px 40px 100px;
+    cursor: default;
+}
+#ttt-restart-label {
+    cursor: default;
+}
+#ttt-restart {
+    margin: 20px 0px 0px 0px;
+    cursor: pointer;
+}
+#ttt-restart:hover {
+    opacity: 0.5;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    cursor: pointer;
+}
+#x-player {
+    margin: 0px 100px 0px 0px;
+    font-size: 260%;
+    cursor: pointer;
+}
+#o-player {
+    cursor: pointer;
+    font-size: 260%;
+}
+
+/* footer section styling */
+/* Footer styling */
+footer {
+    text-align: center; /* Align text to center */
+    opacity: 0.3; /* Opacity for the footer */
+    text-shadow: 1px  #000; /* Optional shadow for text */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-family: "Comfortaa", cursive; /* Font family */
+    position: fixed; /* Fix the footer to the bottom */
+    left: 0; /* Align left */
+    right: 0; /* Align right */
+    bottom: 0; /* Align at the bottom */
+    width: 100%; /* Full width */
+    padding: 10px 0; /* Padding for spacing */
+    background-color: transparent; /* Background color (optional) */
+    z-index: 1000; /* Ensure footer stays above other content */
+}
+
+footer span a {
+    color: crimson;
+    text-decoration: none;
+}
+
+footer span a:hover {
+    text-decoration: underline;
+}
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.loading-page {
+    background: #fff;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Membuatnya tetap di atas */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Memastikan loader di atas semua konten */
+}
+
+.loading-page .counter {
+    text-align: center;
+}
+
+.loading-page .counter h1 {
+    color: #080808;
+    font-size: 20px;
+    margin-top: -10px;
+}
+
+.loading-page .counter hr {
+    background: #080808;
+    border: none;
+    height: 1px;
+}
+
+.loading-page .counter {
+    position: relative;
+    width: 80%; /* Menggunakan persentase untuk responsivitas */
+    max-width: 300px; /* Maksimal lebar untuk perangkat besar */
+    margin: 0 auto; /* Mengatur margin otomatis untuk pusat */
+}
+
+.loading-page .counter h1.abs {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.loading-page .counter .color {
+    width: 0px;
+    overflow: hidden;
+    color: #f60d54;
+    height: 10px; /* Menambahkan tinggi untuk animasi */
+    background: #f60d54; /* Warna latar belakang untuk progress bar */
+    transition: width 0.5s ease; /* Animasi lebar */
+}
+
+/* Media Queries untuk Responsivitas Lebih Lanjut */
+@media (max-width: 768px) {
+    .loading-page .counter h1 {
+        font-size: 18px; /* Menyesuaikan ukuran font di perangkat kecil */
+    }
+}
+
+@media (max-width: 480px) {
+    .loading-page .counter h1 {
+        font-size: 16px; /* Lebih kecil di perangkat yang lebih kecil */
+    }
+
+    .loading-page .counter {
+        width: 90%; /* Lebar lebih besar pada layar kecil */
+    }
+}
+/* Sembunyikan footer saat loading */
+.loading-screen + footer {
+    display: none;
+}
