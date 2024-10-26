@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+    <!-- Meta Tags -->
+    <meta name="description" content="Tictac Vs Computer">
+    <meta name="keywords" content="Game, Tictac, Simplegame, GameTicTac , VsCompute">
+    <meta name="author" content="Galang">
+    
+    <!-- Open Graph Tags (untuk media sosial) -->
+    <meta property="og:title" content="TicTac Game">
+    <meta property="og:description" content="TicTac Vs Computer ">
+    <meta property="og:image" content="{{ url_for('static', filename='image.jpg') }}">
+    <meta property="og:url" content="https://tictac.galang.xyz">
+  <title>Tictac</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:900'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Comfortaa:400,700'> <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  
+<div class='loading-page'>
+  <div class='counter'>
+    <h1>0%</h1>
+    <hr>
+  </div>
+</div>
+
+<!-- partial:index.partial.html -->
+<div class="tictac-container">
+  <div id="tictac-back">
+    <div class="text-center">
+        <h1 id="ttt-title" data-encrypted="VElDIFRBQw=="></h1>
+      <div id="ttt-author">Vs Computer</div>
+      <div id="tictac-outform">
+        <div id="ttt-restart-label">please select a player:</div>
+        <div><span id="x-player" class="x"><i class="fa fa-times" aria-hidden="true"></i></span><span id="o-player" class="o">O</span></div>
+      </div>
+      <div id="tictac-game">
+        <h2 id="game-state" class="text-center"></h2>
+        <div class="tictac-row">
+          <span class="tictac-button" id="ttt00">&nbsp;</span>
+          <span class="tictac-button" id="ttt01">&nbsp;</span>
+          <span class="tictac-button" id="ttt02">&nbsp;</span>
+        </div>
+        <div class="tictac-row">
+          <span class="tictac-button" id="ttt10">&nbsp;</span>
+          <span class="tictac-button" id="ttt11">&nbsp;</span>
+          <span class="tictac-button" id="ttt12">&nbsp;</span>
+        </div>
+        <div class="tictac-row">
+          <span class="tictac-button" id="ttt20">&nbsp;</span>
+          <span class="tictac-button" id="ttt21">&nbsp;</span>
+          <span class="tictac-button" id="ttt22">&nbsp;</span>
+        </div>
+      </div>
+      <div id="ttt-restart">restart game</div>
+      
+    </div>
+  </div>
+</div>
+ 
+  <footer>
+        <span data-encrypted-copyright="Q29weXJpZ2h0CiAgICA="></span>
+        <span data-encrypted-rights="QWxsIHJpZ2h0cyByZXNlcnZlZCAKICAgIA=="></span>
+        <span data-encrypted-name="R2FsYW5n"></span>
+        <script>
+            function decryptBase64(text) {
+                return atob(text);
+            }
+            const copyrightElement = document.querySelector("[data-encrypted-copyright]");
+            const rightsElement = document.querySelector("[data-encrypted-rights]");
+            const nameElement = document.querySelector("[data-encrypted-name]");
+            copyrightElement.innerHTML = decryptBase64(copyrightElement.getAttribute("data-encrypted-copyright")) + '&copy;' + new Date().getFullYear() + ' ';
+            rightsElement.innerHTML = decryptBase64(rightsElement.getAttribute("data-encrypted-rights")) + ' ';
+            nameElement.innerHTML = 'By <a href="https://instagram.com/galngfp">' + decryptBase64(nameElement.getAttribute("data-encrypted-name")) + '</a>';
+            const footerElement = document.querySelector("footer");
+            footerElement.innerHTML = copyrightElement.innerHTML + rightsElement.innerHTML + nameElement.innerHTML;
+    </script>
+    </footer>
+<!-- partial -->
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  
+    <script>
+        // Fungsi untuk mendekripsi teks dari Base64 ke teks asli
+        function decryptBase64(text) {
+            return atob(text); // Mendekripsi teks
+        }
+
+        // Mendekripsi dan menampilkan teks pada elemen <h1>
+        const titleElement = document.getElementById("ttt-title");
+        titleElement.innerText = decryptBase64(titleElement.getAttribute("data-encrypted"));
+    </script>
+  <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+</html>
