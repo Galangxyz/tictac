@@ -102,14 +102,12 @@
             callback: function (token) {
                 console.log("Challenge Success:", token);
 
-                // Menyembunyikan widget CAPTCHA dan menampilkan loading screen
-                document.getElementById("myWidget").style.display = "none";
-                document.querySelector(".loading-page").style.display = "block";
-                
+                     
                 // Menyelesaikan loading setelah 2 detik dan menampilkan konten utama
                 setTimeout(function () {
-                    document.querySelector(".loading-page").style.display = "none";
-                    document.querySelector(".tictac-container").style.display = "block";
+                    document.querySelector(".loading-page").style.display = "flex";
+                    document.getElementById("myWidget").style.display = "none";
+                    
                 }, 2000); // 2 detik
             },
         });
