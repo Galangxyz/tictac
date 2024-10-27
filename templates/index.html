@@ -27,13 +27,17 @@
 ></script>
 </head>
 <body>
+
   
-<div class='loading-page'>
-  <div class='counter'>
+  <div id="myWidget"></div>
+!-- Loading Screen -->
+<div class="loading-page" style="display: none;">
+  <div class="counter">
     <h1>0%</h1>
     <hr>
   </div>
 </div>
+
 
 <!-- partial:index.partial.html -->
 <div class="tictac-container">
@@ -89,7 +93,28 @@
     </footer>
 <!-- partial -->
   <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-  
+  <!-- JavaScript -->
+<script>
+    // Menampilkan CAPTCHA dan memuat loading screen setelah berhasil
+    window.onloadTurnstileCallback = function () {
+        turnstile.render('#myWidget', {
+            sitekey: '0x4AAAAAAAygR-UykD6sJFXT', // Ganti dengan Site Key Anda
+            callback: function (token) {
+                console.log("Challenge Success:", token);
+
+                // Menyembunyikan widget CAPTCHA dan menampilkan loading screen
+                document.getElementById("myWidget").style.display = "none";
+                document.querySelector(".loading-page").style.display = "block";
+                
+                // Menyelesaikan loading setelah 2 detik dan menampilkan konten utama
+                setTimeout(function () {
+                    document.querySelector(".loading-page").style.display = "none";
+                    document.querySelector(".tictac-container").style.display = "block";
+                }, 2000); // 2 detik
+            },
+        });
+    };
+</script>
     <script>
         // Fungsi untuk mendekripsi teks dari Base64 ke teks asli
         function decryptBase64(text) {
